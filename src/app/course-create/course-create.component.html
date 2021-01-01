@@ -1,0 +1,59 @@
+<div *ngIf="!courseLessonCreateMode">
+    <div class="header text-center">
+        Start sharing your knowledge with others
+    </div>
+    <div class="d-flex justify-content-center items">
+        <div class="item">
+            <p class="orange">Come up with name</p>
+            <div class="item1">
+                <img src="../../assets/pictures/Vector 1.png" class="img1">
+                <img src="../../assets/pictures/penc 1.png" class="img2">
+            </div>
+        </div>
+        <div class="item">
+            <div class="item2 item">
+                <img src="../../assets/pictures/progr.png" class="img1">
+                <img src="../../assets/pictures/sport.png" class="img2">
+                <img src="../../assets/pictures/science.png" class="img3">
+                <img src="../../assets/pictures/car.png" class="img4">
+                <img src="../../assets/pictures/cook.png" class="img5">
+                <img src="../../assets/pictures/dna.png" class="img6">
+                <img src="../../assets/pictures/_.png" class="img7">
+            </div>
+            <p class="gray">Choose a category</p>
+        </div>
+
+        <div class="item">
+            <p class="orange">Create lessons</p>
+            <div class="item3 item">
+                <img src="../../assets/pictures/Vector 2.png" class="img1">
+                <img src="../../assets/pictures/lessons.png" class="img2">
+            </div>
+        </div>
+
+        <div class="item">
+            <div class="item4 item">
+                <img src="../../assets/pictures/media 1.png" class="img1">
+            </div>
+            <p class="gray">Add materials & tasks</p>
+        </div>
+
+        <div class="item">
+            <p class="orange">Publish!</p>
+            <div class="item5 item">
+                <img src="../../assets/pictures/Vector 3.png" class="img1">
+                <img src="../../assets/pictures/publish 1.png" class="img2">
+            </div>
+        </div>
+    </div>
+    <div class="container d-flex justify-content-center form">
+        <input type="text" class="form-control w-50" placeholder="Enter the name of the course"
+            [(ngModel)]="course.name" required>
+        <button mat-raised-button color="accent" class="create-btn"
+            (click)="this.courseLessonCreateMode = true">Create</button>
+    </div>
+</div>
+
+<div *ngIf="courseLessonCreateMode">
+    <app-course-page [course]="course"></app-course-page>
+</div>

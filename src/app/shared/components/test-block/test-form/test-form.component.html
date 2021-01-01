@@ -1,0 +1,38 @@
+<div class="header d-flex justify-content-between">
+    <p>Question</p>
+    <p style="color:red" *ngIf="answerError">Answer is incorrect!</p>
+    <p>
+        Points
+        <ng-container *ngIf="answer">: {{test.score}}</ng-container>
+    </p>
+    <div *ngIf="!answer">
+        <input type="number" [(ngModel)]="test.score" max="10">
+    </div>
+</div>
+<div class="question-field">
+    <mat-form-field class="w-100" *ngIf="!answer">
+        <mat-label>Ask a question</mat-label>
+        <input matInput type="text" [(ngModel)]="test.task">
+    </mat-form-field>
+    <div *ngIf="answer" class="ml-4">
+        {{test.task}}
+    </div>
+</div>
+
+<div class="options">
+    <p>Answer <ng-container *ngIf="type !== 2">options</ng-container>
+    </p>
+    <ng-container *ngFor="let option of test.testOptions; let i = index;">
+        <app-choice-form [(option)]="test.testOptions[i]" [type]="type" (onRadioChange)="onRadioChange($event)"
+            [answer]="answer">
+        </app-choice-form>
+    </ng-container>
+    <div class="d-flex option-btn" (click)="addOption()" *ngIf="type !== 2 && !answer">
+        <img src="../../../../../../assets/pictures/addIcon.png" alt="" width="30" height="30">
+        <p>Add an Option...</p>
+    </div>
+
+    <div *ngIf="answer" class="d-flex m-2 justify-content-center">
+        <button mat-raised-button (click)="savePoints()" color="accent" [hidden]="test.answered">Answer</button>
+    </div>
+</div>

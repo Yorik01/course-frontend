@@ -1,0 +1,40 @@
+.lesson-form {
+    mat-form-field {
+        padding: 0 16px 0 16px;
+
+        border: 3px solid #d9d9d9;
+        box-sizing: border-box;
+        border-radius: 10px;
+    }
+
+    ::ng-deep .mat-form-field-appearance-legacy .mat-form-field-wrapper {
+        padding: 0;
+    }
+
+    ::ng-deep .mat-form-field-underline {
+        display: none;
+    }
+
+    .mat-raised-button {
+        color: #ffffff;
+        padding: 10px 50px 10px 50px;
+        font-size: 16px;
+        border-radius: 50px;
+
+        &.mat-warn {
+            background-color: #ffd6a6;
+            border: 0;
+        }
+
+        &.mat-primary {
+            background-color: #96ffc6;
+        }
+    }
+
+    form {
+        padding: 25px 10px 25px 10px;
+        border: 8px solid #b3b3b3;
+        box-sizing: border-box;
+        border-radius: 20px;
+    }
+}

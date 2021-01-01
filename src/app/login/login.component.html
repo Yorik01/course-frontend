@@ -1,0 +1,38 @@
+<div class="container register-form">
+    <div class="row">
+        <div class="col-6">
+            <div class="d-flex flex-column already-a-member align-items-center">
+                <img src="../../assets/pictures/register-logo.png" alt="" width="300px" height="300px">
+                <img src="../../assets/pictures/Teach, study, learn!.png" width="266px">
+            </div>
+        </div>
+        <div class="col-6">
+            <p class="register-header">Sign in</p>
+            <form [formGroup]="form">
+                <div class="w-100">
+                    <mat-form-field appearance="standard">
+                        <mat-label class="ml-4">Your email</mat-label>
+                        <input matInput formControlName="emailControl">
+                        <mat-icon matPrefix class="ml-1">email</mat-icon>
+                    </mat-form-field>
+                </div>
+                <div class="w-100">
+                    <mat-form-field appearance="standard">
+                        <mat-label class="ml-4">Password</mat-label>
+                        <input matInput formControlName="passwordControl" type="password">
+                        <mat-icon matPrefix class="ml-1">lock</mat-icon>
+                    </mat-form-field>
+                </div>
+            </form>
+
+            <div class="d-flex buttons">
+                <button mat-raised-button color="accent" (click)="onSubmit()">
+                    Log in
+                </button>
+                <button mat-flat-button class="already-a-member-btn" routerLink="/user/register">
+                    Register
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

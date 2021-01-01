@@ -1,0 +1,15 @@
+.menu-item {
+    color: rgba(253, 176, 60, 0.5);
+    font-size: 28px;
+    width: auto;
+    display: inline-block;
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.menu-item.item-active {
+    color: #ffda24;
+    border-bottom: 3px solid #ffda24;
+}

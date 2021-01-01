@@ -1,0 +1,51 @@
+.viewer {
+    margin-top: 50px;
+    .header {
+        color: #ffda24;
+        font-size: 24px;
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.25);
+    }
+    .image {
+        border: 6px solid #feea89;
+        box-sizing: border-box;
+        border-radius: 15px;
+        width: 200px;
+        height: 200px;
+        padding: 2px;
+    }
+}
+
+.lessons {
+    margin-top: 50px;
+
+    .lesson {
+        box-shadow: -2px 0px 4px rgba(0, 0, 0, 0.25), 2px 2px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 5px;
+        padding: 20px;
+        height: 140px;
+        margin: 20px 0 20px 0;
+
+        &:hover {
+            cursor: pointer;
+            background-color: #feea89;
+        }
+        .header {
+            color: #737373;
+            font-size: 22px;
+        }
+
+        .description {
+            font-size: 22px;
+            color: #b3b3b3;
+        }
+    }
+}
+
+.btns {
+    .mat-raised-button.mat-warn {
+        background: #ffa0a0 !important;
+        border-radius: 50px !important;
+        font-size: 20px !important;
+        height: 50px;
+    }
+}

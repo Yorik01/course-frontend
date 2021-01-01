@@ -1,0 +1,108 @@
+$bgDefault: #feea89;
+$bgHighlight: #feea89;
+$colDefault: #ecf0f1;
+$colHighlight: #ffffff;
+.navbar {
+    background-color: $bgDefault !important;
+    border-color: $bgHighlight !important;
+    .navbar-brand {
+        color: $colDefault !important;
+        &:hover,
+        &:focus {
+            color: $colHighlight !important;
+        }
+    }
+    .navbar-text {
+        color: $colDefault !important;
+    }
+    .navbar-nav {
+        > li {
+            > a {
+                color: $colDefault !important;
+                &:hover,
+                &:focus {
+                    color: $colHighlight !important;
+                }
+            }
+        }
+        > .active {
+            > a,
+            > a:hover,
+            > a:focus {
+                color: $colHighlight !important;
+                background-color: $bgHighlight !important;
+            }
+        }
+        > .open {
+            > a,
+            > a:hover,
+            > a:focus {
+                color: $colHighlight !important;
+                background-color: $bgHighlight !important;
+            }
+        }
+    }
+    .navbar-toggle {
+        border-color: $bgHighlight !important;
+        &:hover,
+        &:focus {
+            background-color: $bgHighlight !important;
+        }
+        .icon-bar {
+            background-color: $colDefault !important;
+        }
+    }
+    .navbar-collapse,
+    .navbar-form {
+        border-color: $colDefault !important;
+    }
+    .navbar-link {
+        color: $colDefault !important;
+        &:hover {
+            color: $colHighlight !important;
+        }
+    }
+}
+@media (max-width: 767px) {
+    .navbar-default .navbar-nav .open .dropdown-menu {
+        > li > a {
+            color: $colDefault !important;
+            &:hover,
+            &:focus {
+                color: $colHighlight !important;
+            }
+        }
+        > .active {
+            > a,
+            > a:hover,
+            > a:focus {
+                color: $colHighlight !important;
+                background-color: $bgHighlight !important;
+            }
+        }
+    }
+}
+
+.menu-item {
+    font-size: 24px;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
+}
+
+.menu-item-in-active {
+    border-top: 3px solid #ffffff;
+}
+
+.menu-item-active {
+    border-top: 7px solid #ffd300;
+}
+
+.icon {
+    font-size: 36px;
+    mat-icon {
+        color: #ffffff;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}

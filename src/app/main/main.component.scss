@@ -1,0 +1,31 @@
+.header {
+    margin-top: 50px;
+    color: #ffd300;
+    font-size: 64px;
+    line-height: 96px;
+}
+
+.buttons {
+    margin-top: 50px;
+
+    .join-btn {
+        margin-right: 100px;
+    }
+}
+
+.mat-raised-button {
+    height: 55px;
+    width: auto;
+    color: #ffffff;
+    padding: 10px 35px 10px 35px !important;
+    font-size: 24px;
+    border-radius: 50px !important;
+
+    &.mat-accent {
+        background: #ffe464;
+    }
+
+    &.mat-warn {
+        background: #6f6f6f;
+    }
+}

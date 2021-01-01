@@ -1,0 +1,67 @@
+.course-info {
+    margin: 40px 70px 40px 70px;
+
+    .image {
+        border: 6px solid #feea89;
+        box-sizing: border-box;
+        border-radius: 15px;
+        width: 200px;
+        height: 200px;
+        padding: 2px;
+    }
+
+    .name {
+        color: #ffda24;
+        font-size: 28px;
+        line-height: 40px;
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.25);
+    }
+
+    .enroll-btn {
+        margin-top: 30px;
+    }
+
+    .extra-info-header {
+        background: #ffe464;
+        border-radius: 10px 10px 0px 0px;
+        font-size: 20px;
+        line-height: 25px;
+        color: #737373;
+        padding: 8px;
+        text-align: center;
+    }
+
+    .extra-info {
+        background: #ffffff;
+        box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.25);
+        border-radius: 0px 0px 10px 10px;
+        padding: 20px;
+
+        .text {
+            color: #fee983;
+            text-shadow: 1px 0px 1px rgba(0, 0, 0, 0.25);
+            font-size: 22px;
+            line-height: 20px;
+        }
+    }
+
+    .view-courses {
+        margin-top: 20px;
+    }
+
+    .description {
+        margin: 70px 160px 70px 160px;
+    }
+}
+
+.enroll-btn {
+    .mat-raised-button {
+        background: #ffe464;
+        height: 55px;
+        width: auto;
+        color: #ffffff;
+        padding: 10px 35px 10px 35px !important;
+        font-size: 24px;
+        border-radius: 50px !important;
+    }
+}

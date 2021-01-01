@@ -1,0 +1,15 @@
+<div class="video-block">
+    <div class="header-block w-100 d-flex">
+        <img src="../../../../../assets/pictures/videoBlockPlay.png" alt="" class="play-button">
+        <input type="file" id="file" #file class="upload" (change)="onFileAdded($event.target.files)" accept="video/*">
+        <button (click)="onDelete.emit(block.id)" class="delete-btn">X</button>
+    </div>
+
+    <div class="body d-flex justify-content-center align-items-center">
+        <img *ngIf="!videoToUpload" src="../../../../../assets/pictures/VideoImage.png" alt="" (click)="loadVideo()">
+        <mat-spinner *ngIf="videoToUpload && !url" color="accent"></mat-spinner>
+        <video #video [src]="url | safeHtml" controls width="600px" height="auto" *ngIf="videoToUpload && url">
+
+        </video>
+    </div>
+</div>

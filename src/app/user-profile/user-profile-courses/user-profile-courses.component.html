@@ -1,0 +1,127 @@
+<div class="container profile" *ngIf="profile">
+    <div class="row">
+        <div class="profile-image-and-buttons col-3">
+            <div class="profile-image">
+                <img [src]="profile.imageSrc" width="200" height="200">
+            </div>
+            <div class="buttons-menu ml-4 mt-4">
+                <app-user-profile-menu [items]="menuItems">
+                </app-user-profile-menu>
+            </div>
+        </div>
+        <div class="profile-description col-6">
+            <div class="d-flex flex-column">
+                <div class="name">
+                    {{profile.name}}
+                </div>
+                <div class="d-flex mt-2">
+                    <p style="color: #737373; font-size: 20px;" class="mr-3">Course name: </p>
+                    <mat-form-field appearance="outline" style="width: 300px; height: 10px; padding: 0;">
+                        <input matInput [formControl]="searchCtrl">
+                        <mat-icon matSuffix>search</mat-icon>
+                    </mat-form-field>
+                </div>
+                <div class="started">
+                    <div class="course-items-header" *ngIf="started.length">
+                        Started:
+                    </div>
+                    <div class="courses">
+                        <div class="course-item" *ngFor="let course of startedFiltered"
+                            (click)="onCourseItemClick(course.id)">
+                            <div class="course-image">
+                                <img [src]="course.imageSrc" height="100" width="100">
+                            </div>
+                            <div class="d-flex flex-column justify-content-between">
+                                <div class="course-name">
+                                    {{course.name}}
+                                </div>
+                                <div class="course-author">
+                                    {{course.createdBy}}
+                                </div>
+                            </div>
+                            <div class="d-flex flex-column ml-auto">
+                                <div class="course-progress">
+                                    Progress: {{getFinishedLessonsCount(course)}}/{{course.lessonCount}}
+                                </div>
+                                <div class="course-progress">
+                                    Score: {{course.score}}/{{course.maxScore}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="created" *ngIf="created.length">
+                    <div class="course-items-header">
+                        Created:
+                    </div>
+                    <div class="courses">
+                        <div class="course-item" *ngFor="let course of createdFiltered">
+                            <div (click)="onCourseItemClick(course.id)" class="d-flex">
+                                <div class="course-image">
+                                    <img [src]="course.imageSrc" height="100" width="100">
+                                </div>
+                                <div class="d-flex flex-column justify-content-between">
+                                    <div class="course-name">
+                                        {{course.name}}
+                                    </div>
+                                    <div class="course-author">
+                                        {{course.createdBy}}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ml-auto d-flex flex-column justify-content-between">
+                                <button mat-raised-button color="accent"
+                                    routerLink="/course/edit/{{course.id}}">Edit</button>
+                                <button mat-raised-button color="warn"
+                                    (click)="onCourseDelete(course.id)">Delete</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="completed" *ngIf="completed.length">
+                    <div class="course-items-header">
+                        Completed:
+                    </div>
+                    <div class="courses">
+                        <div class="course-item" *ngFor="let course of completedFiltered"
+                            (click)="onCourseItemClick(course.id, true)">
+                            <div class="course-image">
+                                <img [src]="course.imageSrc" height="100" width="100">
+                            </div>
+                            <div class="d-flex flex-column justify-content-between">
+                                <div class="course-name">
+                                    {{course.name}}
+                                </div>
+                                <div class="course-author">
+                                    {{course.createdBy}}
+                                </div>
+                            </div>
+                            <div class="ml-auto d-flex flex-column">
+                                <img src="../../../assets/pictures/image 4.png" alt="">
+                                <div class="mt-2 ml-1">
+                                    {{course.score}}/{{course.maxScore}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="quantity-of-courses">
+            <div class="header">
+                Quantity of courses:
+            </div>
+            <div class="body">
+                <div class="item">
+                    Created: {{profile.courseCreated}}
+                </div>
+                <div class="item mt-2">
+                    Started: {{profile.courseStarted}}
+                </div>
+                <div class="item mt-2">
+                    Completed: {{profile.courseCompleted}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

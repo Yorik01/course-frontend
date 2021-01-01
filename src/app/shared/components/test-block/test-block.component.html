@@ -1,0 +1,23 @@
+<div class="test-block">
+    <div class="header-block w-100 d-flex">
+        <img src="../../../../../assets/pictures/testImage.png" alt="" class="test-button">
+        <div class="header-item" (click)="answer = 0">
+            Multiple choice
+        </div>
+        <div class="header-item" (click)="answer = 1">
+            One choice
+        </div>
+        <div class="header-item" (click)="answer = 2">
+            Short answer
+        </div>
+        <button (click)="onDelete.emit(block.id)" class="delete-btn">X</button>
+    </div>
+
+    <div class="body container" [ngSwitch]="answer">
+        <div class="offset-md-2 offset-lg-2 offset-0 col-md-8 col-lg-6 col-sm-10 col-12 test-body">
+            <app-test-multiple *ngSwitchCase="0" [test]="block.value"></app-test-multiple>
+            <app-test-one *ngSwitchCase="1" [test]="block.value"></app-test-one>
+            <app-test-short *ngSwitchCase="2" [test]="block.value"></app-test-short>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,19 @@
+<div class="d-flex justify-content-center mt-4">
+    <button mat-raised-button (click)="onDownoload()">Download certificate</button>
+</div>
+<div class="containter mt-4 mb-4 d-flex justify-content-center" id="certificate">
+    <div class="position-relative" #certificateRef>
+        <img src="../../../../assets/pictures/Certificate.png" #image />
+        <div class="cert-name" #certName>
+            {{certificate.name}}
+        </div>
+
+        <div class="cert-date" #certDate>
+            {{certificate.date | date:'longDate'}}
+        </div>
+
+        <div class="user-name" #userNameRef>
+            {{userName}}
+        </div>
+    </div>
+</div>

@@ -1,0 +1,72 @@
+.profile {
+    margin-top: 50px;
+
+    .profile-image {
+        border: 6px solid #feea89;
+        box-sizing: border-box;
+        border-radius: 15px;
+        width: 214px;
+        height: 214px;
+    }
+
+    .profile-image.profile-image-inner-center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 40px;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    .profile-description {
+        .name {
+            font-size: 24px;
+            color: #848484;
+        }
+        .profile-edit-btn {
+            background-color: #feea89;
+            margin-left: 200px;
+            padding: 2px;
+            border-radius: 5px;
+            height: 28px;
+
+            &:hover {
+                background-color: #848484;
+                cursor: pointer;
+            }
+        }
+        .add-info {
+            div {
+                font-size: 22px;
+                color: #848484;
+            }
+        }
+    }
+
+    .quantity-of-courses {
+        .header {
+            background: #ffe464;
+            border-radius: 10px 10px 0px 0px;
+            font-size: 20px;
+            line-height: 25px;
+            color: #737373;
+            padding: 8px;
+            text-align: center;
+        }
+        .body {
+            background: #ffffff;
+            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.25);
+            border-radius: 0px 0px 10px 10px;
+            padding: 20px;
+
+            .item {
+                color: #fee983;
+                text-shadow: 1px 0px 1px rgba(0, 0, 0, 0.25);
+                font-size: 22px;
+                line-height: 20px;
+            }
+        }
+    }
+}

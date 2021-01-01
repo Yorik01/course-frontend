@@ -1,0 +1,34 @@
+<div class="d-flex justify-content-center h-100 align-items-center" *ngIf="!course">
+    <mat-spinner color="accent"></mat-spinner>
+</div>
+
+<div class="course-info" *ngIf="course">
+    <div class="row">
+        <div class="col-3">
+            <img [src]="course.imageSrc" class="image">
+        </div>
+        <div class="col-6 d-flex flex-column justify-content-end">
+            <p class="name"> {{ course.name }}</p>
+            <div class="enroll-btn">
+                <button mat-raised-button class="accent" (click)="onCourseEnrollment()"
+                    [disabled]="buttonDisabled">Enroll the course</button>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="extra-info-header">
+                The course includes:
+            </div>
+            <div class="extra-info">
+                <div class="text">
+                    - {{ course.lessonCount }} lessons
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="description">
+        <p>
+            {{ course.description }}
+        </p>
+    </div>
+</div>

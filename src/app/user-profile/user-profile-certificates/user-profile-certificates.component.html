@@ -1,0 +1,59 @@
+<div class="container profile" *ngIf="profile">
+    <div class="row">
+        <div class="profile-image-and-buttons col-3">
+            <div class="profile-image">
+                <img [src]="profile.imageSrc" width="200" height="200">
+            </div>
+            <div class="buttons-menu ml-4 mt-4">
+                <app-user-profile-menu [items]="menuItems">
+                </app-user-profile-menu>
+            </div>
+        </div>
+        <div class="profile-description col-6">
+            <div class="d-flex flex-column">
+                <div class="name">
+                    {{profile.name}}
+                </div>
+                <div class="d-flex mt-2">
+                    <p style="color: #737373; font-size: 20px;" class="mr-3">Certificate name: </p>
+                    <mat-form-field appearance="outline" style="width: 300px; height: 10px; padding: 0;">
+                        <input matInput>
+                        <mat-icon matSuffix>search</mat-icon>
+                    </mat-form-field>
+                </div>
+                <div class="certificates mt-4">
+                    <div class="certificate card m-2 p-4" *ngFor="let c of certificates"
+                        (click)="onCertificateClick(c)">
+                        <div class="d-flex justify-content-between">
+                            <mat-icon>video_label</mat-icon>
+                            <div class="name ml-2">
+                                {{c.name}}
+                            </div>
+                            <div class="name">
+                                Completeness:
+                                <ng-container *ngIf="c.completeness">{{c.completeness}}%</ng-container>
+                                <ng-container *ngIf="!c.completeness">0%</ng-container>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="quantity-of-courses">
+            <div class="header">
+                Quantity of courses:
+            </div>
+            <div class="body">
+                <div class="item">
+                    Created: {{profile.courseCreated}}
+                </div>
+                <div class="item mt-2">
+                    Started: {{profile.courseStarted}}
+                </div>
+                <div class="item mt-2">
+                    Completed: {{profile.courseCompleted}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

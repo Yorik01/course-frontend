@@ -1,0 +1,62 @@
+<div class="page">
+
+    <div class="d-flex course-page">
+        <div class="header">Course &lt;&lt; {{ course.name }} &gt;&gt; </div>
+
+        <div class="select" *ngIf="!constructorMode">
+            <select class="custom-select" [(ngModel)]="category">
+                <option value="-1">---</option>
+                <option *ngFor="let cat of categories" [value]="cat">{{cat}}</option>
+            </select>
+        </div>
+
+        <img [src]="url" class="image" *ngIf="course.id && !constructorMode">
+
+        <p *ngIf="constructorMode" class="p">{{ lessonEdit.name }}</p>
+    </div>
+
+    <div class="d-flex avatar-input" *ngIf="!constructorMode && !course.id">
+        <div class="avatar">
+            <p class="p">Set the avatar of the course ></p>
+        </div>
+        <div class="avatar">
+            <img src="../../assets/pictures/image 10.png" class="image" *ngIf="!imageLoaded" (click)="onImageUpload()"
+                width="100" height="100">
+            <img [src]="url" class="image" *ngIf="imageLoaded" (click)="onImageUpload()" width="100" height="100">
+            <input type="file" id="file" #file class="upload" (change)="onFileAdded($event.target.files)"
+                accept="image/*" [hidden]="true">
+        </div>
+    </div>
+
+    <textarea type="text" placeholder="Enter detailed description about a course" class="form-control textarea"
+        *ngIf="!constructorMode" [(ngModel)]="course.description"></textarea>
+
+    <ng-container *ngIf="!constructorMode">
+        <div class="lesson" *ngFor="let lesson of lessons">
+            <app-lesson-form [lesson]="lesson" (deleteLesson)="onDeleteLesson(lesson)"
+                (editLesson)="onEditLesson(lesson)">
+            </app-lesson-form>
+        </div>
+
+        <div class="d-flex justify-content-center align-items-center flex-column buttons">
+            <p *ngIf="!lessons.length && course.id" class="text-muted p">There are no lessons in the course yet.</p>
+
+            <div class="row mt-3">
+                <div class="mr-2">
+                    <button mat-raised-button color="accent" *ngIf="course.id" (click)="onAddLesson()">
+                        + Add lesson
+                    </button>
+                </div>
+                <button mat-raised-button color="warn" (click)="onSaveCourse()">
+                    Save
+                </button>
+            </div>
+        </div>
+    </ng-container>
+
+    <app-constructor [courseId]="course.id" [lesson]="lessonEdit" *ngIf="constructorMode"
+        (saveLesson)="onSaveLesson($event)">
+
+    </app-constructor>
+
+</div>

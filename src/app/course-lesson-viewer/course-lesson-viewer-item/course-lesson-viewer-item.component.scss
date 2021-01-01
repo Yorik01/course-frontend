@@ -1,0 +1,32 @@
+.main {
+    margin-left: 250px;
+    padding: 50px;
+
+    .block {
+        margin-bottom: 50px;
+    }
+}
+
+.course-name {
+    color: #ffda24;
+    font-size: 22px;
+
+    &:hover {
+        cursor: pointer;
+        color: #b2b2b2;
+    }
+}
+
+.lesson-name {
+    font-size: 22px;
+    color: #6f6f6f;
+}
+
+.finish-btn {
+    .mat-raised-button {
+        border-radius: 50px;
+        color: #ffffff;
+        width: 200px;
+        margin-bottom: 100px;
+    }
+}

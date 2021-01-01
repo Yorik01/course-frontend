@@ -1,0 +1,30 @@
+.cert-name {
+    position: absolute;
+    top: 410px;
+    left: 400px;
+    font-family: "Bebas Neue", cursive;
+    font-size: 26px;
+}
+
+.cert-date {
+    position: absolute;
+    bottom: 150px;
+    right: 150px;
+    font-family: "Work Sans", sans-serif;
+    font-size: 26px;
+    font-weight: 900;
+}
+
+.user-name {
+    position: absolute;
+    top: 290px;
+    left: 420px;
+    font-family: "Dancing Script", cursive;
+    color: orange;
+    font-size: 42px;
+}
+
+#certificate {
+    width: 700px;
+    margin: auto;
+}

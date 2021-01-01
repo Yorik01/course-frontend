@@ -1,0 +1,26 @@
+.blocks-menu {
+    div {
+        &:hover {
+            cursor: pointer;
+            background-color: #c4c4c4;
+
+            p {
+                color: #ffffff;
+            }
+
+            mat-icon {
+                color: #ffffff;
+            }
+        }
+
+        p {
+            font-size: 22px;
+            line-height: 22px;
+            color: #ffd300;
+        }
+
+        mat-icon {
+            color: #70757d;
+        }
+    }
+}

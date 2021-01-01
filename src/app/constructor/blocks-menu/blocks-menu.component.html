@@ -1,0 +1,8 @@
+<mat-divider></mat-divider>
+<section class="d-flex w-100 container blocks-menu">
+    <div class="d-flex pl-3 pr-3 pt-2 rounded" *ngFor="let item of items" (click)="item.onClick()">
+        <mat-icon class="mr-1" fontSet="material-icons-outlined">{{item.icon}}</mat-icon>
+        <p class="font-weight-bold">{{item.name}}</p>
+    </div>
+</section>
+<mat-divider></mat-divider>

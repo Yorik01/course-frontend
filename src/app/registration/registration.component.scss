@@ -1,0 +1,59 @@
+.register-form {
+    margin-top: 50px;
+    box-shadow: 1px 1px 12px rgba(0, 0, 0, 0.25), -1px -1px 12px rgba(0, 0, 0, 0.25);
+    border-radius: 40px;
+    padding: 50px 80px 50px 80px;
+
+    .register-header {
+        font-size: 40px;
+        line-height: 53px;
+        color: #6f6f6f;
+    }
+
+    .mat-raised-button.mat-accent {
+        margin-top: 20px;
+        color: #ffffff;
+        padding: 5px 40px 5px 40px;
+        font-size: 24px;
+        border-radius: 50px;
+    }
+
+    .already-a-member {
+        margin: 50px 20px 20px 0;
+
+        img {
+            margin-top: 20px;
+        }
+    }
+
+    .already-a-member-btn {
+        margin: 50px 100px 0 0;
+    }
+
+    .mat-flat-button {
+        color: #b2b2b2;
+        padding: 5px 40px 5px 40px;
+        font-size: 24px;
+        border-radius: 50px;
+    }
+
+    mat-form-field {
+        width: 100%;
+    }
+
+    ::ng-deep .mat-form-field-infix {
+        padding: 0.5em 0 0.5em 10px;
+    }
+
+    ::ng-deep .mat-icon.notranslate {
+        margin: 0 !important;
+    }
+
+    ::ng-deep .mat-icon-button {
+        width: 1.5em !important;
+    }
+
+    .mat-datepicker-toggle {
+        color: #000000;
+    }
+}

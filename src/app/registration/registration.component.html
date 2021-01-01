@@ -1,0 +1,70 @@
+<div class="container register-form">
+    <div class="row">
+        <div class="col-6">
+            <p class="register-header">Sign up</p>
+            <form [formGroup]="form">
+                <div class="w-100">
+                    <mat-form-field appearance="standard">
+                        <mat-label class="ml-4">Your name</mat-label>
+                        <input matInput formControlName="nameControl">
+                        <mat-icon matPrefix class="ml-1 pr-2">account_box_outline</mat-icon>
+                    </mat-form-field>
+                </div>
+                <div class="w-100">
+                    <mat-form-field appearance="standard">
+                        <mat-label class="ml-4">Your surname</mat-label>
+                        <input matInput formControlName="surnameControl">
+                        <mat-icon matPrefix class="ml-1 pr-2">account_circle_outline</mat-icon>
+                    </mat-form-field>
+                </div>
+                <div class="w-100">
+                    <mat-form-field appearance="standard">
+                        <mat-label class="ml-4">Your email</mat-label>
+                        <input matInput formControlName="emailControl">
+                        <mat-icon matPrefix class="ml-1">email</mat-icon>
+                    </mat-form-field>
+                </div>
+                <div class="w-100">
+                    <mat-form-field appearance="standard">
+                        <mat-label class="ml-4">Date of birth</mat-label>
+                        <input matInput [matDatepicker]="picker" formControlName="dateControl">
+                        <mat-datepicker-toggle matPrefix [for]="picker">
+                            <mat-icon matDatepickerToggleIcon class="ml-1">date_range</mat-icon>
+                        </mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
+                    </mat-form-field>
+                </div>
+                <div class="w-100">
+                    <mat-form-field appearance="standard">
+                        <mat-label class="ml-4">Password</mat-label>
+                        <input matInput type="password" formControlName="passwordControl">
+                        <mat-icon matPrefix class="ml-1">lock</mat-icon>
+                    </mat-form-field>
+                </div>
+                <div class="w-100">
+                    <mat-form-field appearance="standard">
+                        <mat-label class="ml-4">Repeat password</mat-label>
+                        <input matInput type="password" formControlName="passwordReapeatControl">
+                        <mat-icon matPrefix class="ml-1">lock_outline</mat-icon>
+                    </mat-form-field>
+                </div>
+
+                <button mat-raised-button color="accent" (click)="onSumbit()">
+                    Register
+                </button>
+            </form>
+        </div>
+        <div class="col-6">
+            <div class="d-flex flex-column already-a-member align-items-center">
+                <img src="../../assets/pictures/Teach, study, learn!.png" width="266px">
+                <img src="../../assets/pictures/register-logo.png" alt="" width="300px" height="300px">
+            </div>
+
+            <div class="d-flex justify-content-end">
+                <button mat-flat-button class="already-a-member-btn">
+                    Already a member
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

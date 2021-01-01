@@ -1,0 +1,16 @@
+::ng-deep .ql-toolbar {
+    background-color: #f4f4f4;
+
+    &.ql-snow {
+        border: none;
+        display: flex;
+    }
+}
+
+::ng-deep .ql-snow {
+    border: none;
+}
+
+::ng-deep .last {
+    margin-left: auto;
+}

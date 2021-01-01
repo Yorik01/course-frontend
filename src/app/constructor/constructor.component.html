@@ -1,0 +1,27 @@
+<app-blocks-menu (addBlock)="onAddBlock($event)"></app-blocks-menu>
+
+<div class="blocks" *ngFor="let block of lesson.blocks">
+    <div class="block mt-3 mb-3" [ngSwitch]="block.name">
+        <div class="container">
+            <app-text-block *ngSwitchCase="'text'" [block]="block" (onDelete)="onDeleteBlock($event)">
+            </app-text-block>
+            <app-image-block *ngSwitchCase="'image'" [block]="block" (onDelete)="onDeleteBlock($event)">
+            </app-image-block>
+            <app-tip-block *ngSwitchCase="'tip'" [block]="block" (onDelete)="onDeleteBlock($event)">
+            </app-tip-block>
+            <app-video-block *ngSwitchCase="'video'" [block]="block" (onDelete)="onDeleteBlock($event)">
+            </app-video-block>
+            <app-audio-block *ngSwitchCase="'audio'" [block]="block" (onDelete)="onDeleteBlock($event)">
+            </app-audio-block>
+            <app-test-block *ngSwitchCase="'test'" [block]="block" (onDelete)="onDeleteBlock($event)">
+            </app-test-block>
+        </div>
+    </div>
+</div>
+
+<div class="d-flex justify-content-center save-btn"
+    [ngClass]="{ 'align-items-center h-50': lesson.blocks.length === 0 }">
+    <button mat-raised-button color="accent" (click)="onSaveLesson()">
+        Save
+    </button>
+</div>

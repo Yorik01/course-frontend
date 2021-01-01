@@ -1,0 +1,73 @@
+p {
+  padding: 3px 16px 3px 16px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 20px;
+  color: #6f6f6f;
+}
+
+.options {
+  margin-top: 5px;
+  border: 2px solid rgba(128, 128, 128, 0.9);
+
+  .option-btn {
+    margin-left: 20px;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+$radioButtonSize: 25px;
+
+:host ::ng-deep .mat-radio-container {
+  height: $radioButtonSize;
+  width: $radioButtonSize;
+}
+:host ::ng-deep .mat-radio-outer-circle {
+  height: $radioButtonSize;
+  width: $radioButtonSize;
+}
+:host ::ng-deep .mat-radio-inner-circle {
+  height: $radioButtonSize;
+  width: $radioButtonSize;
+}
+:host ::ng-deep .mat-radio-button .mat-radio-ripple {
+  height: $radioButtonSize * 2;
+  width: $radioButtonSize * 2;
+  left: calc(50% - $radioButtonSize);
+  top: calc(50% - $radioButtonSize);
+}
+
+.question-field {
+  border: 2px solid rgba(128, 128, 128, 0.9);
+
+  mat-form-field {
+    padding: 0 16px 0 16px;
+  }
+
+  ::ng-deep .mat-form-field-appearance-legacy .mat-form-field-wrapper {
+    padding: 0;
+  }
+
+  ::ng-deep .mat-form-field-underline {
+    display: none;
+  }
+}
+
+.header {
+  background: #fee983;
+  border-radius: 10px 10px 0px 0px;
+  height: 30px;
+  margin-top: 39px;
+}
+
+p {
+  padding: 3px 16px 3px 16px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 20px;
+  color: #6f6f6f;
+}

@@ -1,0 +1,4 @@
+<div class="menu-item" *ngFor="let item of items" [ngClass]="{'item-active': item.isActive}" routerLink="{{item.url}}"
+    (click)="onItemClick(item)">
+    {{item.name}}
+</div>

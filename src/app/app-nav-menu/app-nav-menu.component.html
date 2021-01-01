@@ -1,0 +1,41 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">
+        <img src="../../assets/pictures/logoCourseHeader.png" alt="" height="50" width="50">
+        <img src="../../assets/pictures/logoCourseHeader2.png" alt="" height="50">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse ml-2" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item" *ngFor="let item of items" [ngClass]="{
+                'active': item.isActive,
+                'menu-item-active': item.isActive,
+                'menu-item-in-active': !item.isActive
+            }" [hidden]="!isLogin && item.onlyAuth">
+                <a class="nav-link menu-item" routerLink="{{item.path}}" (click)="setItemActive(item)">
+                    {{item.name}}
+                </a>
+            </li>
+        </ul>
+
+        <div class="ml-auto mr-3">
+            <div class="icon" *ngIf="isLogin" (click)="logout()">
+                <mat-icon [inline]="true">exit_to_app</mat-icon>
+            </div>
+            <div *ngIf="!isLogin">
+                <ul class="navbar-nav">
+                    <li class="nav-item" *ngFor="let item of loginitems" [ngClass]="{
+                    'active': item.isActive,
+                    'menu-item-active': item.isActive,
+                    'menu-item-in-active': !item.isActive
+                }" [hidden]="!isLogin && item.onlyAuth">
+                        <a class="nav-link menu-item" routerLink="{{item.path}}" (click)="setItemActive(item)">
+                            {{item.name}}
+                        </a>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>

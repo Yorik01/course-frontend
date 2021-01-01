@@ -1,0 +1,35 @@
+<span class="course-name" (click)="onGoBackByAnchor.emit()">
+    {{course.name}} >
+</span>
+<span class="lesson-name">{{lesson.name}}</span>
+
+<div class="main">
+    <div class="block" *ngFor="let b of lesson.blocks">
+        <ng-container [ngSwitch]="b.name">
+            <div *ngSwitchCase="'video'">
+                <app-video-viewer [videoBlock]="b" *ngIf="b.value"></app-video-viewer>
+            </div>
+            <div *ngSwitchCase="'text'">
+                <div [innerHTML]="b.value" style="word-wrap: break-word">
+                </div>
+            </div>
+            <div *ngSwitchCase="'image'">
+                <app-image-viewer [imageBlock]="b" *ngIf="b.value"></app-image-viewer>
+            </div>
+            <div *ngSwitchCase="'test'">
+                <div [ngSwitch]="b.value.type">
+                    <app-test-one *ngSwitchCase="1" [test]="b.value" [answer]="true" [courseId]="course.id">
+                    </app-test-one>
+                    <app-test-short *ngSwitchCase="2" [test]="b.value" [answer]="true" [courseId]="course.id">
+                    </app-test-short>
+                    <app-test-multiple *ngSwitchCase="0" [test]="b.value" [answer]="true" [courseId]="course.id">
+                    </app-test-multiple>
+                </div>
+            </div>
+        </ng-container>
+    </div>
+</div>
+
+<div class="d-flex justify-content-center w-100 finish-btn">
+    <button mat-raised-button color="accent" (click)="onFinishLesson()">Finish</button>
+</div>

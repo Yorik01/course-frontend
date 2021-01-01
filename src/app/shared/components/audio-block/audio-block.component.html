@@ -1,0 +1,16 @@
+<div class="audio-block">
+    <div class="header-block w-100 d-flex">
+        <img src="../../../../../assets/pictures/AudioImage.png" alt="" class="audio-button">
+        <input type="file" id="file" #file class="upload" (change)="onFileAdded($event.target.files)" accept="audio/*">
+        <button (click)="onDelete.emit(block.id)" class="delete-btn">X</button>
+    </div>
+    <div class="body d-flex justify-content-center align-items-center">
+        <p *ngIf="!audioToUpload" (click)="onAudioUpload()">
+            + Add some audio
+        </p>
+        <mat-spinner *ngIf="audioToUpload && !url" color="accent" diameter="80"></mat-spinner>
+        <audio [src]="url | safeHtml" controls *ngIf="audioToUpload && url">
+
+        </audio>
+    </div>
+</div>
